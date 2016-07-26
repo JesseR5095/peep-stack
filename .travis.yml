@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: PBYCsR880bgYST+2nZEwa5ReuMB4fZd6XWxuSFK8wer/i7sRsfDCJoUOMLJTI4q4LJeBlJKiQbe37jbDRzw+zIk6FwrJUKVgrZlWkRW3++WTrviOTToHL1bWi15hTOLVv5vG0oVhlT9rzTBq4a9FyR/NyPa/8LJTwPy7VIq7ea3uXd4ZBRr65RSe3pct6Jog3mTuHA0ZI7R4cLbAnN4pLhQ6CoRTyVJlssJZBRoZqiMdplOh2sphjjsV8SNJzbnEvyPsUsVxa7plQ8bJyS8slvxZPcwQey2tZCX/UZWAlMdCgQ9D1TwFfig1DGip1W/fV2W/ex0b1QEWjLNNOJDob+8pnsuiQ7JetSnBEsmUIHAoqJPQ7L1CUpEE1zOpgMtbxgS9BRcri3QBrV2apSVInCWnJcK8NhXugO2TLFQzpNGYPUEW4vQE/EX7frylkZAYveDbQ0Nff3WRMTahVz7nxBn+GwWqGGjKUWn8lZK4TP1nskE5ylyB3Yyn3YWMSTF/XlE9l8sTuFAQqBkiMRdCQtVBS0e7+thigQcUakcNDQSoqrEoDtpFPkCf/OePxavmmRytzOzHLaifUdPMFVuEfrSKSP0eaUY6KmLbaiBAJ4+h2cVjcgCgs8W2taAYtncjqBJe4RzGpjiowGtUKKJcU+K8Z/2AK3xUdHoiSBqGka4=
+  app: fast-garden-77270
+  on:
+    repo: JesseR5095/peep-stack
